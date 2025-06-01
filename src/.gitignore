@@ -1,0 +1,9 @@
+# Ignore PNG files with 'soldier' in the name
+*soldier*.png
+
+# Ignore all .tiled-session and .tiled files
+*.tiled-session
+*.tiled
+
+# Ignore all .tsx files
+*.tsx
