@@ -3,21 +3,29 @@ from settings import *
 class Player(pygame.sprite.Sprite):
     def __init__(self, pos, groups, collision_sprites):
         super().__init__(groups)
-
-        # Load
-        self.sheet = pygame.image.load(join('assets', 'chara', 'Soldier-Idle.png')).convert_alpha()
-
+        
         # settings
         self.frame_width = 100 
         self.frame_height = 100
-        self.frames = self.load_frames()
+
+        # Load
+        self.idle_sheet = pygame.image.load(join('assets', 'chara', 'Soldier-Idle.png')).convert_alpha()
+        self.walk_sheet = pygame.image.load(join('assets', 'chara', 'Soldier-Walk.png')).convert_alpha()
+        
+        # Load frames
+        self.idle_frames = self.load_frames(self.idle_sheet)
+        self.walk_frames = self.load_frames(self.walk_sheet)
+        self.frames = self.idle_frames 
+        self.last_frames = self.frames
+        
+
         self.frame_index = 0
 
         # Animation
         self.animation_speed = 0.025
         self.image = self.frames[self.frame_index]
         self.rect = self.image.get_frect(center=pos)
-        self.hitbox_rect = self.rect.inflate(-self.rect.width * 0.3, -self.rect.height * 0.1)
+        self.hitbox_rect = self.rect.inflate(-275, -275)
 
             
         # movement
@@ -25,14 +33,15 @@ class Player(pygame.sprite.Sprite):
         self.speed = 500
         self.collision_sprites = collision_sprites
 
-    def load_frames(self):
+
+    def load_frames(self, sheet):
         frames = []
-        sheet_width = self.sheet.get_width()
+        sheet_width = sheet.get_width()
         zoom = 3
 
         for i in range(sheet_width // self.frame_width):
             frame = pygame.Surface((self.frame_width, self.frame_height), pygame.SRCALPHA)
-            frame.blit(self.sheet, (0, 0), (i * self.frame_width, 0, self.frame_width, self.frame_height))
+            frame.blit(sheet, (0, 0), (i * self.frame_width, 0, self.frame_width, self.frame_height))
             
             # Zoom
             frame = pygame.transform.scale(frame, (self.frame_width * zoom, self.frame_height * zoom))
@@ -51,8 +60,15 @@ class Player(pygame.sprite.Sprite):
         self.direction.x = int(keys[pygame.K_d]) - int(keys[pygame.K_q])
         self.direction.y = int(keys[pygame.K_s]) - int(keys[pygame.K_z])
         self.direction = self.direction.normalize() if self.direction else self.direction
-        # self.direction.y
         
+        if self.direction.length_squared() == 0:
+            self.frames = self.idle_frames
+        else:
+            self.frames = self.walk_frames
+            
+        if self.frames != self.last_frames:
+            self.frame_index = 0
+        self.last_frames = self.frames
 
     def move(self, dt):
         self.hitbox_rect.x += self.direction.x * self.speed * dt

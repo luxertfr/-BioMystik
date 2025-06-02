@@ -3,6 +3,7 @@ from player import Player
 from sprites import *
 from pytmx.util_pygame import load_pygame
 from groups import AllSprites
+from interaction import DialogBox
 
 from random import randint
 
@@ -15,6 +16,9 @@ class Game:
         self.clock = pygame.time.Clock()
         self.running = True
         self.debug = False # Doesnt work idk why 
+        self.dialog_box = DialogBox(WINDOW_WIDTH, WINDOW_HEIGHT)
+
+        self.interactables = []
         
         # Groups
         self.all_sprites = AllSprites()
@@ -25,9 +29,7 @@ class Game:
 
         
         self.setup()
-        
- 
-        
+
         # Sprites
         # self.player = Player((686.0 * 2.75, 1575.45 * 2.75), self.all_sprites, self.collision_sprites)
 
@@ -50,11 +52,19 @@ class Game:
             
         for x, y, image in map.get_layer_by_name('deco').tiles():
             image = pygame.transform.scale(image, (TILE_SIZE * zoom, TILE_SIZE * zoom))
-            Sprite((x * TILE_SIZE * zoom, y * TILE_SIZE * zoom), image, self.all_sprites)
+            sprite = Sprite((x * TILE_SIZE * zoom, y * TILE_SIZE * zoom), image, self.all_sprites)
             
         for obj in map.get_layer_by_name("Objects"):
-            image = pygame.transform.scale(obj.image, (TILE_SIZE * zoom, TILE_SIZE * zoom))
-            CollisionSprite((obj.x * zoom, obj.y * zoom), image, (self.all_sprites, self.collision_sprites))
+            if hasattr(obj, "image") and obj.image:
+                image = pygame.transform.scale(obj.image, (TILE_SIZE * zoom, TILE_SIZE * zoom))
+            else:
+                image = pygame.Surface((obj.width * zoom, obj.height * zoom), pygame.SRCALPHA)
+
+            message = getattr(obj, "properties", {}).get("message", "Aucun message")
+
+            sprite = CollisionSprite((obj.x * zoom, obj.y * zoom), image, (self.all_sprites, self.collision_sprites), message)
+
+            self.interactables.append(sprite)
             
         for coll in map.get_layer_by_name("Collisions"):
             x = coll.x * zoom
@@ -82,31 +92,45 @@ class Game:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.running = False
-            
-            if self.debug:
-                self.draw_debug()
+                elif event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_k:
+                        self.debug = not self.debug
+                        # print("debugactive")
+                    elif event.key == pygame.K_e:
+                        for obj in self.interactables:
+                            if self.player.rect.colliderect(obj.rect.inflate(20, 20)):
+                                self.dialog_box.show_message(obj.message)
+
 
                     
             # Update     
             self.all_sprites.update(dt)
+            self.dialog_box.update()
             
             # draw
             self.display_surface.fill((30, 30, 30))
-            self.all_sprites.draw(self.player.rect.center)
+            self.all_sprites.custom_draw(self.player)
+            self.dialog_box.draw(self.display_surface)
+
+            if self.debug : 
+                self.draw_debug()
+
 
             pygame.display.update()
     
     def draw_debug(self):
+        offset = self.all_sprites.offset
+
         # Hitbox du joueur
-        pygame.draw.rect(self.display_surface, (255, 0, 0), self.player.hitbox_rect, 2)
+        pygame.draw.rect(self.display_surface, (255, 0, 0), self.player.hitbox_rect.move(-offset.x, -offset.y), 2)
 
         # Toutes les collisions
         for sprite in self.collision_sprites:
-            pygame.draw.rect(self.display_surface, (0, 0, 255), sprite.rect, 2)
+            pygame.draw.rect(self.display_surface, (0, 0, 255), sprite.rect.move(-offset.x, -offset.y), 2)
 
 
         
-        pygame.quit()
+    pygame.quit()
                 
 if __name__ == '__main__':
     game = Game()

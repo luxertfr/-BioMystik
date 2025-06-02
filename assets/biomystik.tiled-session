@@ -58,8 +58,8 @@
             "scale": 5.5,
             "selectedLayer": 6,
             "viewCenter": {
-                "x": 708.1818181818182,
-                "y": 1548.909090909091
+                "x": 800,
+                "y": 800
             }
         },
         "tmx/town.tmx": {
@@ -99,7 +99,8 @@
             "scaleInEditor": 4
         }
     },
-    "last.imagePath": "C:/Users/mahul/OneDrive/Desktop/Characters",
+    "frame.defaultDuration": 100,
+    "last.imagePath": "C:/Users/mahul/OneDrive/Desktop/GUI",
     "map.height": 60,
     "map.lastUsedFormat": "tmx",
     "map.tileHeight": 16,
