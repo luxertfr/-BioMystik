@@ -5,8 +5,8 @@
     },
     "activeFile": "tmx/start.tmx",
     "expandedProjectPaths": [
-        "tmx",
         "tsx",
+        "tmx",
         "."
     ],
     "fileStates": {
@@ -55,19 +55,19 @@
             "scaleInDock": 1
         },
         "tmx/start.tmx": {
-            "scale": 1,
-            "selectedLayer": 4,
+            "scale": 5.5,
+            "selectedLayer": 6,
             "viewCenter": {
-                "x": 1322,
-                "y": 664
+                "x": 708.1818181818182,
+                "y": 1548.909090909091
             }
         },
         "tmx/town.tmx": {
             "scale": 0.75,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 1217.3333333333333,
-                "y": 442.6666666666666
+                "x": 640,
+                "y": 480
             }
         },
         "tsx/Decor0.tsx": {
@@ -112,7 +112,6 @@
         "tsx/Tree0.tsx",
         "tsx/Decor0.tsx",
         "tsx/Wall.tsx",
-        "tsx/Door0.tsx",
         "tsx/Door0.tsx",
         "tsx/Humanoid0.tsx",
         "tmx/town.tmx"

@@ -14,10 +14,12 @@ class Player(pygame.sprite.Sprite):
         self.frame_index = 0
 
         # Animation
-        self.animation_speed = 0.0095
+        self.animation_speed = 0.025
         self.image = self.frames[self.frame_index]
         self.rect = self.image.get_frect(center=pos)
-        
+        self.hitbox_rect = self.rect.inflate(-self.rect.width * 0.3, -self.rect.height * 0.1)
+
+            
         # movement
         self.direction = pygame.Vector2()
         self.speed = 500
@@ -53,20 +55,21 @@ class Player(pygame.sprite.Sprite):
         
 
     def move(self, dt):
-        self.rect.x += self.direction.x * self.speed * dt
+        self.hitbox_rect.x += self.direction.x * self.speed * dt
         self.collision('horizontal')
-        self.rect.y += self.direction.y * self.speed * dt
+        self.hitbox_rect.y += self.direction.y * self.speed * dt
         self.collision('vertical')
+        self.rect.center = self.hitbox_rect.center
     
     def collision(self, direction):
         for sprite in self.collision_sprites:
-            if sprite.rect.colliderect(self.rect):
+            if sprite.rect.colliderect(self.hitbox_rect):
                 if direction == 'horizontal':
-                    if self.direction.x > 0: self.rect.right = sprite.rect.left
-                    if self.direction.x < 0: self.rect.left = sprite.rect.right
+                    if self.direction.x > 0: self.hitbox_rect.right = sprite.rect.left
+                    if self.direction.x < 0: self.hitbox_rect.left = sprite.rect.right
                 else:
-                    if self.direction.y < 0: self.rect.top = sprite.rect.bottom
-                    if self.direction.y > 0: self.rect.bottom = sprite.rect.top
+                    if self.direction.y < 0: self.hitbox_rect.top = sprite.rect.bottom
+                    if self.direction.y > 0: self.hitbox_rect.bottom = sprite.rect.top
                     
     def update(self, dt):
         self.input()
