@@ -33,7 +33,7 @@ class Player(pygame.sprite.Sprite):
         self.last_frames = self.frames
 
         # Inventory / stats
-        self.inventory = {"épée": 1, "clef": 1}
+        self.inventory = {}
         self.attack_cooldown = 0.5
         self.last_attack_time = 0
         self.attack_damage = 10

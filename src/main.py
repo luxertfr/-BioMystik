@@ -38,7 +38,7 @@ class Game:
 
 
         
-        self.setup(load_pygame(join("assets", "tmx", "dungeon.tmx")))
+        self.setup(load_pygame(join("assets", "tmx", "start.tmx")))
 
         # Sprites
         # self.player = Player((686.0 * 2.75, 1575.45 * 2.75), self.all_sprites, self.collision_sprites)

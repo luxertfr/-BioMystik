@@ -1,0 +1,186 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "tmx/dungeon.tmx",
+    "expandedProjectPaths": [
+        "tmx",
+        ".",
+        "tsx"
+    ],
+    "fileStates": {
+        "C:/Users/mahul/OneDrive/Desktop/Examples/Town.tmx": {
+            "scale": 5.5,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 140.72727272727272,
+                "y": 134.72727272727272
+            }
+        },
+        "C:/Users/mahul/OneDrive/Desktop/Examples/Town.tmx#Cat0": {
+            "scaleInDock": 1
+        },
+        "C:/Users/mahul/OneDrive/Desktop/Examples/Town.tmx#Container0": {
+            "scaleInDock": 1
+        },
+        "C:/Users/mahul/OneDrive/Desktop/Examples/Town.tmx#Decor0": {
+            "scaleInDock": 1
+        },
+        "C:/Users/mahul/OneDrive/Desktop/Examples/Town.tmx#Door0": {
+            "scaleInDock": 1
+        },
+        "C:/Users/mahul/OneDrive/Desktop/Examples/Town.tmx#Floor": {
+            "scaleInDock": 1
+        },
+        "C:/Users/mahul/OneDrive/Desktop/Examples/Town.tmx#Ground0": {
+            "scaleInDock": 1
+        },
+        "C:/Users/mahul/OneDrive/Desktop/Examples/Town.tmx#Humanoid0": {
+            "scaleInDock": 1
+        },
+        "C:/Users/mahul/OneDrive/Desktop/Examples/Town.tmx#Pit0": {
+            "scaleInDock": 1
+        },
+        "C:/Users/mahul/OneDrive/Desktop/Examples/Town.tmx#Player0": {
+            "scaleInDock": 1
+        },
+        "C:/Users/mahul/OneDrive/Desktop/Examples/Town.tmx#Quadraped0": {
+            "scaleInDock": 1
+        },
+        "C:/Users/mahul/OneDrive/Desktop/Examples/Town.tmx#Tree0": {
+            "scaleInDock": 1
+        },
+        "C:/Users/mahul/OneDrive/Desktop/Examples/Town.tmx#Wall": {
+            "scaleInDock": 1
+        },
+        "tmx/dungeon.tmx": {
+            "expandedObjectLayers": [
+                10,
+                5,
+                6
+            ],
+            "scale": 5.5,
+            "selectedLayer": 8,
+            "viewCenter": {
+                "x": 249.18181818181822,
+                "y": 283.09090909090907
+            }
+        },
+        "tmx/start.tmx": {
+            "expandedObjectLayers": [
+                7,
+                9,
+                12,
+                6
+            ],
+            "scale": 16,
+            "selectedLayer": 8,
+            "viewCenter": {
+                "x": 494.34375,
+                "y": 278
+            }
+        },
+        "tmx/town.tmx": {
+            "expandedObjectLayers": [
+                7,
+                10,
+                9,
+                6
+            ],
+            "scale": 2,
+            "selectedLayer": 7,
+            "viewCenter": {
+                "x": 577.75,
+                "y": 88
+            }
+        },
+        "tsx/Decor0.tsx": {
+            "scaleInDock": 2,
+            "scaleInEditor": 5.5
+        },
+        "tsx/Dog0.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 5.5
+        },
+        "tsx/Door0.tsx": {
+            "scaleInDock": 4,
+            "scaleInEditor": 1
+        },
+        "tsx/Floor.tsx": {
+            "scaleInDock": 1.5,
+            "scaleInEditor": 3
+        },
+        "tsx/GUI0.tsx": {
+            "scaleInDock": 2,
+            "scaleInEditor": 4
+        },
+        "tsx/Ground0.tsx": {
+            "scaleInDock": 2,
+            "scaleInEditor": 3
+        },
+        "tsx/Humanoid0.tsx": {
+            "scaleInDock": 4,
+            "scaleInEditor": 5.5
+        },
+        "tsx/Humanoid1.tsx": {
+            "scaleInDock": 4,
+            "scaleInEditor": 8
+        },
+        "tsx/Tree0.tsx": {
+            "scaleInDock": 3,
+            "scaleInEditor": 2
+        },
+        "tsx/Wall.tsx": {
+            "scaleInDock": 2,
+            "scaleInEditor": 4
+        },
+        "tsx/pnj_frame1.tsx": {
+            "scaleInDock": 2,
+            "scaleInEditor": 8
+        }
+    },
+    "frame.defaultDuration": 100,
+    "last.imagePath": "C:/Users/mahul/OneDrive/Desktop/Characters",
+    "map.height": 30,
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "map.width": 30,
+    "openFiles": [
+        "tmx/start.tmx",
+        "tsx/Floor.tsx",
+        "tsx/Ground0.tsx",
+        "tsx/Tree0.tsx",
+        "tsx/Decor0.tsx",
+        "tsx/Wall.tsx",
+        "tsx/Door0.tsx",
+        "tsx/Humanoid0.tsx",
+        "tmx/town.tmx",
+        "tsx/Humanoid1.tsx",
+        "tsx/GUI0.tsx",
+        "tsx/Dog0.tsx",
+        "tmx/dungeon.tmx"
+    ],
+    "project": "biomystik.tiled-project",
+    "property.type": "bool",
+    "recentFiles": [
+        "tmx/start.tmx",
+        "tsx/Floor.tsx",
+        "tsx/Ground0.tsx",
+        "tsx/Tree0.tsx",
+        "tsx/Decor0.tsx",
+        "tsx/Wall.tsx",
+        "tsx/Door0.tsx",
+        "tsx/Humanoid0.tsx",
+        "tmx/town.tmx",
+        "tsx/Humanoid1.tsx",
+        "tsx/GUI0.tsx",
+        "tsx/Dog0.tsx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    }
+}
