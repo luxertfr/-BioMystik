@@ -3,11 +3,11 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "tmx/start.tmx",
+    "activeFile": "tmx/dungeon.tmx",
     "expandedProjectPaths": [
-        "tsx",
         "tmx",
-        "."
+        ".",
+        "tsx"
     ],
     "fileStates": {
         "C:/Users/mahul/OneDrive/Desktop/Examples/Town.tmx": {
@@ -54,24 +54,53 @@
         "C:/Users/mahul/OneDrive/Desktop/Examples/Town.tmx#Wall": {
             "scaleInDock": 1
         },
-        "tmx/start.tmx": {
+        "tmx/dungeon.tmx": {
+            "expandedObjectLayers": [
+                10,
+                5,
+                6
+            ],
             "scale": 5.5,
-            "selectedLayer": 6,
+            "selectedLayer": 8,
             "viewCenter": {
-                "x": 800,
-                "y": 800
+                "x": 249.18181818181822,
+                "y": 283.09090909090907
+            }
+        },
+        "tmx/start.tmx": {
+            "expandedObjectLayers": [
+                7,
+                9,
+                12,
+                6
+            ],
+            "scale": 16,
+            "selectedLayer": 8,
+            "viewCenter": {
+                "x": 494.34375,
+                "y": 278
             }
         },
         "tmx/town.tmx": {
-            "scale": 0.75,
-            "selectedLayer": 1,
+            "expandedObjectLayers": [
+                7,
+                10,
+                9,
+                6
+            ],
+            "scale": 2,
+            "selectedLayer": 7,
             "viewCenter": {
-                "x": 640,
-                "y": 480
+                "x": 577.75,
+                "y": 88
             }
         },
         "tsx/Decor0.tsx": {
-            "scaleInDock": 3,
+            "scaleInDock": 2,
+            "scaleInEditor": 5.5
+        },
+        "tsx/Dog0.tsx": {
+            "scaleInDock": 1,
             "scaleInEditor": 5.5
         },
         "tsx/Door0.tsx": {
@@ -82,13 +111,21 @@
             "scaleInDock": 1.5,
             "scaleInEditor": 3
         },
+        "tsx/GUI0.tsx": {
+            "scaleInDock": 2,
+            "scaleInEditor": 4
+        },
         "tsx/Ground0.tsx": {
             "scaleInDock": 2,
             "scaleInEditor": 3
         },
         "tsx/Humanoid0.tsx": {
             "scaleInDock": 4,
-            "scaleInEditor": 1
+            "scaleInEditor": 5.5
+        },
+        "tsx/Humanoid1.tsx": {
+            "scaleInDock": 4,
+            "scaleInEditor": 8
         },
         "tsx/Tree0.tsx": {
             "scaleInDock": 3,
@@ -97,15 +134,19 @@
         "tsx/Wall.tsx": {
             "scaleInDock": 2,
             "scaleInEditor": 4
+        },
+        "tsx/pnj_frame1.tsx": {
+            "scaleInDock": 2,
+            "scaleInEditor": 8
         }
     },
     "frame.defaultDuration": 100,
-    "last.imagePath": "C:/Users/mahul/OneDrive/Desktop/GUI",
-    "map.height": 60,
+    "last.imagePath": "C:/Users/mahul/OneDrive/Desktop/Characters",
+    "map.height": 30,
     "map.lastUsedFormat": "tmx",
     "map.tileHeight": 16,
     "map.tileWidth": 16,
-    "map.width": 80,
+    "map.width": 30,
     "openFiles": [
         "tmx/start.tmx",
         "tsx/Floor.tsx",
@@ -115,20 +156,27 @@
         "tsx/Wall.tsx",
         "tsx/Door0.tsx",
         "tsx/Humanoid0.tsx",
-        "tmx/town.tmx"
+        "tmx/town.tmx",
+        "tsx/Humanoid1.tsx",
+        "tsx/GUI0.tsx",
+        "tsx/Dog0.tsx",
+        "tmx/dungeon.tmx"
     ],
     "project": "biomystik.tiled-project",
+    "property.type": "bool",
     "recentFiles": [
-        "tmx/town.tmx",
-        "tsx/Humanoid0.tsx",
-        "tsx/Door0.tsx",
-        "tsx/Wall.tsx",
-        "tsx/Decor0.tsx",
-        "tsx/Tree0.tsx",
-        "tsx/Ground0.tsx",
-        "tsx/Floor.tsx",
         "tmx/start.tmx",
-        "C:/Users/mahul/OneDrive/Desktop/Examples/Town.tmx"
+        "tsx/Floor.tsx",
+        "tsx/Ground0.tsx",
+        "tsx/Tree0.tsx",
+        "tsx/Decor0.tsx",
+        "tsx/Wall.tsx",
+        "tsx/Door0.tsx",
+        "tsx/Humanoid0.tsx",
+        "tmx/town.tmx",
+        "tsx/Humanoid1.tsx",
+        "tsx/GUI0.tsx",
+        "tsx/Dog0.tsx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {
